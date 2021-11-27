@@ -1,6 +1,6 @@
 
 const bcrypt = require('bcrypt'); //pass hashing
-const { Model, Datatypes } = require('sequelize'); //sequelize model class
+const { Model, Datatypes, DataTypes } = require('sequelize'); //sequelize model class
 const sequelize = require('../config/connection');
 
 class User extends Model {
@@ -12,7 +12,7 @@ User.init(
     //table columns
     {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true

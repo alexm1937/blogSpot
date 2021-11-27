@@ -1,7 +1,7 @@
 
 const express = require('express');
 const path = require('path');
-// const routes = require('./controllers');
+const routes = require('./controllers');
 const sequelize = require('./config/connection');
 //const helpers?
 const session = require('express-session');//cookies and session management
@@ -31,7 +31,7 @@ app.use(express.urlencoded({extended: true})); //look for nested data
 app.use(express.static(path.join(__dirname, 'public')));//make public folder accessible 
 
 //starts routes
-// app.use(routes);
+app.use(routes);
 
 //turn on server connect to db
 sequelize.sync({force: false}).then(() => {
