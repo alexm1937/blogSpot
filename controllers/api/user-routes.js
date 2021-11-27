@@ -1,8 +1,7 @@
 
 const router = require('express').Router();
 const { User } = require('../../models');
-const { upsert } = require('../../models/User');
-//const auth?
+const checkAuth = require('../../utils/auth');
 
 //getall
 router.get('/', (req, res) => {
@@ -87,7 +86,7 @@ router.post('/logout', (req, res) => {
 });
 
 //update user
-router.put('/:id', (req, res) => {
+router.put('/:id', checkAuth, (req, res) => {
     User.update(req.body, {
         individualHooks: true, 
         where : { id: req.params.id}
@@ -106,7 +105,7 @@ router.put('/:id', (req, res) => {
 });
 
 //del user
-router.delete('/:id', (req, res) => {
+router.delete('/:id', checkAuth, (req, res) => {
     User.destroy({
         where: {id: req.params.id}
     })
