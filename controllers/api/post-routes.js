@@ -6,8 +6,8 @@ const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
     Post.findAll({
-        attributes: ['id', 'title', 'contents', 'post_url', 'user_id']//created at?
-        //order: [['created_at', 'DESC']],
+        attributes: ['id', 'title', 'contents', 'post_url', 'user_id', 'created_at'],
+        order: [['created_at', 'DESC']],
         // include comments and user models?
     })
     .then(dbPostData => res.json(dbPostData))
