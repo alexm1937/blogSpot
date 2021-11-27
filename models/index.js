@@ -1,8 +1,8 @@
 
 const User = require('./User');
-//const Post
+const Post = require('./Post');
 //const Comment
 
 //create associations
 
-module.exports = { User };
+module.exports = { User, Post };
