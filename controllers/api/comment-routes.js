@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const { Comment, Post, User } = require('../../models');
 
+//get all comments
 router.get('/', (req, res) => {
     Comment.findAll({
         attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
@@ -13,7 +14,7 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     });
 });
-
+//create comment
 router.post('/', (req, res) => {
     if(req.session) {
         Comment.create({
@@ -27,6 +28,23 @@ router.post('/', (req, res) => {
             res.status(400).json(err);
         });
     }
+});
+//del comment
+router.delete('/:id', (req, res) => {
+    Comment.destroy({
+        where: {id: req.params.id}
+    })
+    .then(dbCommentData => {
+        if(!dbCommentData) {
+            res.status(404).json({message: 'No comment found at this id'});
+            return;
+        }
+        res.json(dbCommentData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 module.exports = router;
