@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-//const helpers?
 const session = require('express-session');//cookies and session management
 const SequelizeStore = require('connect-session-sequelize')(session.Store);// cookies/session storage to mysql
 const exphbs = require('express-handlebars');
