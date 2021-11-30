@@ -28,5 +28,24 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 //get route single post
-
+router.get('/post/:id', (req, res) => {
+    Post.findOne({
+        attributes: ['id', 'title', 'contents', 'user_id', 'created_at']
+        //include?
+    })
+    .then(dbPostData => {
+        if(!dbPostData) {
+            res.status(404).json({message: 'No post found with this id'});
+            return;
+        }
+        //serialize data?
+        const post = dbPostData.get({plain: true});
+        //pass data to template
+        res.render('single-post', { post, loggedIn: req.session.loggedIn});
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 module.exports = router;

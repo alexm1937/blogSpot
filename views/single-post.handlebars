@@ -1,0 +1,19 @@
+
+{{>post-part post}}
+
+    {{#if loggedIn}}
+    <form class="comment-form">
+    <div class="mx-auto mt-3" style="width: 95%">
+    <div class="mb-3">
+        <label for="comment-text" class="form-label">Add a Comment</label>
+        <input type="text" class="form-control" name="comment-text">
+    </div>
+    <button type="submit" class="btn btn-primary" id="comment-btn">Submit</button>
+    </div>
+    </form>
+    {{/if}}
+    {{>comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
