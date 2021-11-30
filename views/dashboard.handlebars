@@ -1,0 +1,30 @@
+
+{{!-- new post form --}}
+   <form class="newpost-form">
+    <div class="mb-3">
+        <label for="post-title" class="form-label">Post Title</label>
+        <input type="post-title" class="form-control" name="post-title">
+    </div>
+    <div class="mb-3">
+        <label for="post-contents" class="form-label">Contents</label>
+        <input type="post-contents" class="form-control" name="post-contents">
+    </div>
+    <button type="submit" class="btn btn-primary" id="signup-btn">Submit Post</button>
+    </div>
+    </form>
+
+{{#if posts.length}}
+<h3>Your Posts</h3>
+<ol class="post-list">
+    {{!-- each item in posts now called post --}}
+  {{#each posts as |post|}} 
+  <li class="card mt-2" style="width: 90%;">
+      {{!-- each post item passed to post-part template --}}
+    {{>post-part post}}
+    {{!-- edit posts --}}
+  </li>
+  {{/each}}
+</ol>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>

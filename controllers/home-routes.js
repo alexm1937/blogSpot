@@ -19,5 +19,14 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     });
 });
+//login
+router.get('/login', (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    } 
+    res.render('login');
+});
+//get route single post
 
 module.exports = router;
