@@ -1,0 +1,22 @@
+
+   <form class="updatepost-form ">
+    <div class="mx-auto mt-3" style="width: 90%">
+      <div class="mb-3">
+        <input type="post-title" class="form-control" name="post-title" value="{{post.title}}" />
+    </div>
+    <div class="mb-3">
+        {{!-- <label for="post-contents" class="form-label">{{content}}</label> --}}
+        <input type="post-contents" class="form-control" name="post-contents" value="{{post.contents}}" />
+    </div>
+    <button type="submit" class="btn btn-primary" id="update-btn">Update Post</button>
+    <button type="delete" class="btn btn-danger" id="delete-btn">DELETE Post</button>
+    </div>
+    </form>
+
+
+    <div class="mx-auto mt-3" style="width: 95%">
+    {{>comments post.comments}}
+    </div>
+<script src="/javascript/edit.js"></script>
+<script src="/javascript/delete.js"></script>
+{{!-- <script src="/javascript/comment.js"></script> --}}

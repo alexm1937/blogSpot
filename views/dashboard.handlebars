@@ -16,13 +16,15 @@
     </form>
 
 {{#if posts.length}}
-<h3>Your Posts</h3>
+<h3 class='ms-3'>Your Posts</h3>
 <ol class="post-list">
     {{!-- each item in posts now called post --}}
   {{#each posts as |post|}} 
   <li class="card mt-2" style="width: 90%;">
       {{!-- each post item passed to post-part template --}}
     {{>post-part post}}
+    <a href="/post/{{id}}" class="edit-link ms-3 mb-2">{{comments.length}} comment(s)</a>
+    <a href="/dashboard/edit/{{post.id}}" class="edit-link ms-3 mb-2">Edit post</a>
     {{!-- edit posts --}}
   </li>
   {{/each}}

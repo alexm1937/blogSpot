@@ -5,6 +5,7 @@
   <li class="card mt-2" style="width: 90%;">
       {{!-- each post item passed to post-part template --}}
     {{>post-part post}}
+    <a href="/post/{{id}}" class="edit-link ms-3 mb-2">{{comments.length}} comment(s)</a>
   </li>
   {{/each}}
 </ol>
