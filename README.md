@@ -3,6 +3,8 @@
 
   ## Description
   A blogSpot! A tech-nerd geared social blogsite for anyone to sign up, post and comment
+  ![Screenshot (36)](https://user-images.githubusercontent.com/88976571/144137717-7df10b39-5b81-4201-b20b-a27a89a03928.png)
+
 
   ## Table of contents
   * [Description](#description)
