@@ -2,7 +2,8 @@
   # blogSpot
 
   ## Description
-  A blogSpot! A tech-nerd geared social blogsite for anyone to sign up, post and comment
+  A blogSpot! A tech-nerd geared social blogsite for anyone to sign up, post and comment </br>
+  Visit the live app here: https://infinite-dawn-27184.herokuapp.com/
   ![Screenshot (36)](https://user-images.githubusercontent.com/88976571/144137717-7df10b39-5b81-4201-b20b-a27a89a03928.png)
 
 
@@ -15,7 +16,7 @@
   * [Questions](#questions)
 
   ## Installation
-  To install, you need to first install and set up mysql. Then clone my repo, open the parent folder, and in terminal run npm install to install dependencies which include: bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, and sequelize libraries. From your mysql CLI, in the parent folder of the application, run source db/schema.sql to initialize the database!
+  To install, you need to first install and set up mysql. Then clone my repo, open the parent folder, and in terminal run `npm install` to install dependencies which include: bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, and sequelize libraries. From your mysql CLI, in the parent folder of the application, run source db/schema.sql to initialize the database!
 
   ## Usage
   After dependencies are installed and database is created, simply run npm start inside the terminal in the parent application folder. This will start the server and connect to your database! 
